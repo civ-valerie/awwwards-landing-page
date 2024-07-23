@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./style.module.scss";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
@@ -18,6 +18,10 @@ export default function Home() {
   let xPercent = 0;
   let direction = -1;
   
+  useEffect(() => {
+    console.log('%c✨ Design + Developed By Akilesh • https://www.akilesh.in', 'font-weight: bold; font-size: 16px;color: #00b894');
+  }, []);
+
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
